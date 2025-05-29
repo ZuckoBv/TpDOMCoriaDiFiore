@@ -39,4 +39,3 @@ En este proyecto se aprendió cómo manipular estructuras HTML utilizando única
 
 ## Capturas de pantalla o GIFs (Opcional)
 
-(No se proporcionaron capturas de pantalla o GIFs en el documento original).

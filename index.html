@@ -84,8 +84,9 @@
             guardarCard.replaceChild(nuevaDescripcion, inputDescripcion);
             //remplazo el titulo
             guardarCard.replaceChild(nuevoTitulo, inputTitulo);
-            //llamo el boton
-            const botonEnviar = card.querySelector('.enviar');
+            //llamo y borro el boton
+            botonEnviar.textContent = 'enviar';
+            botonEnviar.classList.add('enviar');
             guardarCard.removeChild(botonEnviar);
 
        }

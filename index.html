@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de DOMs</title>
+</head>
+<body>
+    <div id="app"></div>
+        <button class="btnAgregar">+</button>
+        <button class="btnModificar">✎</button>
+        <button class="btnEliminar">x</button>
+        <div id ="cards">
+
+        </div>
+    </div>
+    <script>
+        const app = document.getElementById('app');
+        const cards = document.getElementById('cards');
+        const botonAgregar = document.querySelector('.btnAgregar');
+        const botonEliminar = document.querySelector('.btnEliminar');
+        const botonModificar = document.querySelector('.btnModificar');
+        const botonEnviar = document.createElement('button');
+
+        function agregarElemento()
+        {
+            const nuevaCard = document.createElement('div');
+            nuevaCard.classList.add('card');
+            const imagenCard = document.createElement('img');
+            imagenCard.textContent = "imagen";
+            const tituloCard = document.createElement('h2');
+            tituloCard.textContent = "Titulo";
+            const descripcionCard = document.createElement('p');
+            descripcionCard.textContent = "Descripción";
+            nuevaCard.appendChild(tituloCard);
+            nuevaCard.appendChild(descripcionCard);
+            cards.appendChild(nuevaCard);
+        }
+        function eliminarElemento()
+        {
+            const eliminarCard = document.querySelector('.card');
+            eliminarCard.parentNode.removeChild(eliminarCard);
+        }
+        function modificarElemento()
+        {
+            //crear input de titulo
+            const titulo = document.querySelector('h2');
+            const card = document.querySelector('.card');
+            const nuevoInputTitulo = document.createElement('input');
+            nuevoInputTitulo.classList.add('EditarTitulo');
+            nuevoInputTitulo.placeholder = titulo.textContent;
+            titulo.parentNode.removeChild(titulo);
+            card.appendChild(nuevoInputTitulo);
+            
+            // Crear input de descripción
+            const descripcion = document.querySelector('p');
+            const nuevoInputDescripcion = document.createElement('input');
+            nuevoInputDescripcion.classList.add('EditarDescripcion');
+            nuevoInputDescripcion.placeholder = descripcion.textContent;
+            descripcion.parentNode.removeChild(descripcion);
+            card.appendChild(nuevoInputDescripcion);
+
+            // crear boton de guardado
+            botonEnviar.textContent='enviar';
+            card.appendChild(botonEnviar);
+            
+        }
+
+
+        
+        function guardar()
+        {
+            const inputTitulo=document.querySelector('.EditarTitulo');
+            const inputDescripcion=document.querySelector('.EditarDescripcion');
+            const nuevoTitulo = document.createElement('h2');
+            nuevoTitulo.textContent=inputTitulo.textContent;
+            const nuevaDescripcion= document.createElement('p');
+            nuevaDescripcion.textContent=inputDescripcion.textContent;
+            const guardarCard=document.querySelector('.cards');
+            guardarCard.appendChild(nuevoTitulo);
+            guardarCard.appendChild(nuevaDescripcion);
+            inputTitulo.parentNode.removeChild(inputTitulo);
+            inputDescripcion.parentNode.removeChild(inputDescripcion);
+        }
+        botonEnviar.addEventListener('click',guardar);
+        botonModificar.addEventListener('click',modificarElemento);
+        botonAgregar.addEventListener('click',agregarElemento);
+        botonEliminar.addEventListener('click',eliminarElemento);
+    </script>
+</body>
+</html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manipulación de DOMs</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="app"></div>
@@ -60,28 +61,35 @@
             descripcion.parentNode.removeChild(descripcion);
             card.appendChild(nuevoInputDescripcion);
 
+
             // crear boton de guardado
             botonEnviar.textContent='enviar';
             card.appendChild(botonEnviar);
             
         }
 
-
-        
         function guardar()
         {
-            const inputTitulo=document.querySelector('.EditarTitulo');
-            const inputDescripcion=document.querySelector('.EditarDescripcion');
+            //Llamo al card
+            const guardarCard=document.querySelector('.card');
+            //modifico el titulo predeterminado
             const nuevoTitulo = document.createElement('h2');
-            nuevoTitulo.textContent=inputTitulo.textContent;
-            const nuevaDescripcion= document.createElement('p');
-            nuevaDescripcion.textContent=inputDescripcion.textContent;
-            const guardarCard=document.querySelector('.cards');
-            guardarCard.appendChild(nuevoTitulo);
-            guardarCard.appendChild(nuevaDescripcion);
-            inputTitulo.parentNode.removeChild(inputTitulo);
-            inputDescripcion.parentNode.removeChild(inputDescripcion);
-        }
+            const inputTitulo=document.querySelector('.EditarTitulo');
+            nuevoTitulo.textContent=inputTitulo.value;
+            //modifico la descripcion predeterminada
+            const nuevaDescripcion=document.createElement('p');
+            const inputDescripcion=document.querySelector('.EditarDescripcion');
+            nuevaDescripcion.textContent=inputDescripcion.value;
+            //remplazo la descripcion
+            guardarCard.replaceChild(nuevaDescripcion, inputDescripcion);
+            //remplazo el titulo
+            guardarCard.replaceChild(nuevoTitulo, inputTitulo);
+            //llamo el boton
+            const botonEnviar = card.querySelector('.enviar');
+            guardarCard.removeChild(botonEnviar);
+
+       }
+
         botonEnviar.addEventListener('click',guardar);
         botonModificar.addEventListener('click',modificarElemento);
         botonAgregar.addEventListener('click',agregarElemento);

@@ -1,0 +1,78 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    background-color: #313131;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+ 
+}
+
+
+.btnAgregar {
+    background-color: #d8dad8;
+}
+
+
+
+.btnModificar {
+    background-color: #adaba8;
+}
+
+.btnEliminar {
+    background-color: #616161;
+}
+
+
+/* Inputs */
+input {
+    display: block;
+    margin-top: 8px;
+    padding: 8px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}

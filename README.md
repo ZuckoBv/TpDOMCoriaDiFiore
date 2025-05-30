@@ -49,4 +49,4 @@ Para crear los elementos del DOM, se utilizaron variables con funciones como `do
 En este proyecto se aprendió cómo manipular estructuras HTML utilizando únicamente JavaScript, creando etiquetas, agregando clases o modificando propiedades. Todo esto se logró con funciones programadas que se activaban mediante eventos específicos que podían ser utilizados desde el mismo programa en funcionamiento.
 
 ## Capturas de pantalla o GIFs (Opcional)
-
+![alt text](<Captura de pantalla (1).png>)

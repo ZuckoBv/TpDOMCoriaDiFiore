@@ -18,9 +18,20 @@ Los campos de las tarjetas son modificables al tocar el ícono de edición (un l
 Las tarjetas se pueden eliminar con el botón "X", el cual eliminará una de las tarjetas a la vez. 
 
 ## Estructura del Proyecto
-
-(No se proporcionó información específica sobre la estructura de carpetas y archivos principales en el documento).
-
+```
+TpDOMCoriaDiFiore
+├─ index.html
+├─ css/
+│  └─ styles.css
+├─ js/
+│  └─ app.js
+├─ assets/
+│  └─ bici.jpg
+│  └─ fiat1.jpg
+│  └─ monopatin.jpg
+├─ README.md
+└─ .gitignore
+```
 ## Tecnologías
 
 * HTML5 
